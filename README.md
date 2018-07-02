@@ -1,25 +1,7 @@
-# ReduxSimpleStarter
+# Trello Clone App 
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
-
-### Getting Started
-
-There are two methods for getting started with this repo.
-
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-> npm install
-> npm start
-```
+## User Stories
+1. A landing page which will have a header with button 'Add List' which will open a popup where a user can give the name of the list.
+2. Each list will have 'Add Task' button which will open a popup where a user can provide the task details(e.g. Taks name, Task created date). 
+3. Task cards can be drag-n-dropped across the lists. After refreshing the page also this card should persist its position. 
+4. Task can be edited and deleted.
