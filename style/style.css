@@ -1,0 +1,19 @@
+.list, .card-list{
+ list-style-type: none; 
+}
+.card-list{
+  padding-left: 0px;
+}
+.list-item{
+  float: left;
+  background-color: gray;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.card-list-item{
+  background-color: white;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 3px;
+}
