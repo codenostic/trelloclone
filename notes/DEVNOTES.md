@@ -1,6 +1,6 @@
-#DEVELOPMENT NOTES
+# DEVELOPMENT NOTES
 
-##VERSION 1 
+## VERSION 1 
 
 #### Single Board with following User Stories 
 
