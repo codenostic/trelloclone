@@ -1,6 +1,6 @@
-# DEVELOPMENT NOTES
+## DEVELOPMENT NOTES
 
-## VERSION 1 
+### VERSION 1 
 
 #### Single Board with following User Stories 
 
@@ -12,7 +12,7 @@ UI Elements
 
 Data Structure 
 ```
-Board->  
+Board: 
   { 
     "list-1": {
       id: SEQUENTIAL NUMBER 
@@ -26,10 +26,10 @@ Board->
   ```
 
 Events 
-1. Add List -> Opens form (UI event)
-2. Create New List - Saves and displays (state change)
-3. Add New Card -> Opens Form (UI Event)
-3. Create new Card - Save and display card in a list (state change)
-4. edit click - opens form with details filled - (UI Event)
-5. Update Card - Save changes to card  and display list (state change)
-6. Delete Card - Deletes and displays new list (state change)
+1. ADD_LIST -> Opens form (UI event)
+2. SAVE_LIST- Saves and displays (state change)
+3. ADD_CARD -> Opens Form (UI Event)
+3. SAVE_CARD - Save and display card in a list (state change)
+4. EDIT_CARD - opens form with details filled - (UI Event)
+5. UPDATE_CARD - Save changes to card  and display list (state change)
+6. DELETE_CARD - Deletes and displays new list (state change)
