@@ -33,3 +33,7 @@ Events
 4. EDIT_CARD - opens form with details filled - (UI Event)
 5. UPDATE_CARD - Save changes to card  and display list (state change)
 6. DELETE_CARD - Deletes and displays new list (state change)
+
+
+Some ideas for next version 
+1. We can use unix datetime as id or unique key for our elements. 
