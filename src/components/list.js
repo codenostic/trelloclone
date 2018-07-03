@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './card';
+import AddCard from './add_card'
 
 const List = ({list, newCard}) => {
   const cardList = [];
@@ -14,9 +15,7 @@ const List = ({list, newCard}) => {
       <hr />
       <ul className="card-list">
         {cardList}
-        <button onClick={() => newCard(list.id)} >
-          new card
-        </button>
+        <AddCard newCard={newCard} listId={list.id}/> 
       </ul>
     </li>
   )

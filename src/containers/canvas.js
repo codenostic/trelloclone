@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect } from 'react-redux';
 import List from '../components/list'
 import {addList, addCard} from '../actions/index';
+import AddList from '../components/add_list';
 
 class Canvas extends Component{
   render(){
@@ -15,8 +16,8 @@ class Canvas extends Component{
     return (
       <ul className="list">
         {lists}
-        <li className="list-item" onClick={this.props.onAddlist}>
-          + Add List
+        <li className="list-item">
+          <AddList onClick={this.props.onAddlist}/>
         </li>
       </ul>
     )
@@ -31,11 +32,11 @@ function mapStateToProps(state){
 
 function mapsDispatchToProps(dispatch){
   return {
-    onAddlist: () => {
-      dispatch(addList())
+    onAddlist: (listName) => {
+      dispatch(addList(listName))
     }, 
-    newCard: (listId) =>{
-      dispatch(addCard(listId))
+    newCard: (listId, cardTitle) =>{
+      dispatch(addCard(listId, cardTitle))
     } 
   }
 }

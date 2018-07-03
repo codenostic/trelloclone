@@ -1,12 +1,12 @@
-import { board, ADD_LIST, ADD_CARD, DELETE_CARD, UPDATE_CARD } from '../actions/index'
+import { ADD_LIST, ADD_CARD, DELETE_CARD, UPDATE_CARD } from '../actions/index'
 
-export default function boardReducer(state = board, action){
+export default function boardReducer(state = {}, action){
   switch(action.type){
     case ADD_LIST:
       const id = Object.keys(state).length + 1;
       const listId = 'list-'+id;
       let newObj = {}
-      newObj[listId] = {id, name:`new-${id}`, cards: {}};
+      newObj[listId] = {id, name:action.listName, cards: {}};
       return Object.assign({}, state, newObj)
     case ADD_CARD:
       const targetId = 'list-'+action.listId;
@@ -15,7 +15,7 @@ export default function boardReducer(state = board, action){
       let newCard = {};
       const newId = Object.keys(cards).length + 1;
       const newCardId = 'card-'+newId;
-      newCard[newCardId] = {id: newId, title: `${targetId}${newCardId}`};
+      newCard[newCardId] = {id: newId, title: action.title};
       const newCards = Object.assign({}, cards, newCard)
       let newList = {}
       newList[targetId] = Object.assign({}, targetList, {cards:newCards});
