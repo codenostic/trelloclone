@@ -17,7 +17,7 @@ Board:
     "list-1": {
       id: SEQUENTIAL NUMBER 
       "card-1":{
-        id: Sequential NUMBER,
+        id: SEQUENTIAL NUMBER,
         title: 'STRING NAME',
         date: 'CREATED_AT' 
       }
