@@ -17,53 +17,52 @@ export function addCard(listId, title){
 }
 
 export const UPDATE_CARD = 'UPDATE_CARD';
+export function updateCard(listId, cardId, title){
+  return{
+    type: UPDATE_CARD,
+    listId,
+    cardId, 
+    title
+  }
+}
 
 export const DELETE_CARD = 'DELETE_CARD';
+export function deleteCard(listId, cardId){
+  return{
+    type: DELETE_CARD,
+    listId,
+    cardId
+  }
+}
 
 
-// export const board = {
-//   'list-1':{
-//     id:1, 
-//     name: 'one',
-//     cards: {
-//       'card-1':{
-//         id: 1, 
-//         title: 'hello'
-//       },
-//       'card-2':{
-//         id:2,
-//         title: 'list1card2'
-//       }
-//     }
-//   } ,
-//   'list-2':{
-//     id:2, 
-//     name: 'two',
-//     cards: {
-//       'card-1':{
-//         id: 1, 
-//         title: 'list2card1'
-//       },
-//       'card-2':{
-//         id:2,
-//         title: 'list2card2'
-//       }
-//     }
-
-//   },
-//   'list-3': {
-//     id:3,
-//     name: 'three',
-//     cards: {
-//       'card-1':{
-//         id: 1, 
-//         title: 'list3Card1'
-//       },
-//       'card-2':{
-//         id:2,
-//         title: 'list3card2'
-//       }
-//     }
-
-//   }
-// }
+export const board = {
+  'list-1':{
+    id:1, 
+    name: 'one',
+    cards: {
+      'card-1':{
+        id: 1, 
+        title: 'hello'
+      },
+      'card-2':{
+        id:2,
+        title: 'list1card2'
+      }
+    }
+  } ,
+  'list-2':{
+    id:2, 
+    name: 'two',
+    cards: {
+      'card-1':{
+        id: 1, 
+        title: 'list2card1'
+      },
+      'card-2':{
+        id:2,
+        title: 'list2card2'
+      }
+    }
+  }
+}

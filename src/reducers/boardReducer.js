@@ -21,9 +21,23 @@ export default function boardReducer(state = {}, action){
       newList[targetId] = Object.assign({}, targetList, {cards:newCards});
       return Object.assign({}, state, newList)
     case UPDATE_CARD:
-      return state
+      const targetListId = 'list-'+action.listId;
+      const targettedList = state[targetListId];
+      const targettedCards = targettedList.cards;
+      const targetCardId = "card-"+action.cardId;
+      const targetCard = targettedCards[targetCardId];
+      let updatedCard = {};
+      updatedCard[targetCardId] = Object.assign({}, targetCard, {title: action.title})
+      const updatedCards = Object.assign({}, targettedCards, updatedCard)
+      let updatedList = {}
+      updatedList[targetListId] = Object.assign({}, targettedList, {cards: updatedCards})
+      return Object.assign({}, state, updatedList)
     case DELETE_CARD:
-      return state
+      const duplicateState = JSON.parse(JSON.stringify(state))
+      const lid = 'list-' + action.listId;
+      const cid = 'card-' + action.cardId;
+      delete duplicateState[lid]["cards"][cid];
+      return Object.assign({}, state, duplicateState)
     default:
       return state;
   }

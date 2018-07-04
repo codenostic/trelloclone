@@ -4,9 +4,10 @@ import Canvas from '../containers/canvas'
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <h1 style={{"textAlign": "center"}}>Trello Clone App</h1>
-        <hr />
+      <div id="app-container">
+        <header>
+          <h1>Trello Clone App</h1>
+        </header>
         <Canvas></Canvas>
       </div>
     );
