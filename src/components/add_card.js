@@ -11,15 +11,6 @@ class AddCard extends Component{
     const showForm = this.state.showAddCardForm
     let input;
     return(
-      <div>
-        {!showForm && (
-          <button onClick={(e)=>{
-            e.stopPropagation();
-            this.setState({showAddCardForm: true})
-          }
-          }>NewCard</button>
-        )}
-        {showForm && (
           <form
             onSubmit={(e)=> {
               e.preventDefault();
@@ -27,21 +18,46 @@ class AddCard extends Component{
               this.setState({showAddCardForm: false});
               input.value="";
             }}
+            className="add-card-form"
           >
+          {!showForm && (
+          <div 
+            onClick={(e)=>{
+              e.stopPropagation();
+              this.setState({showAddCardForm: true})
+            }
+            }
+            className="add-card-button"
+            >
+            <span
+              className="glyphicon glyphicon-plus"
+            ></span>
+              Add New Card</div>
+        )}
+        {showForm && (
+          <div>
             <input 
+              className="form-control"
               type="text" 
               placeholder="card name"
               ref={node => input = node}
               />
-            <button type="submit">save</button>
-            <button onClick={(e)=> {
-              e.stopPropagation();
-              this.setState({showAddCardForm:false})
-            }}>cancel</button>
-          </form>
-        )}
-      </div>
-    )
+              <div className="control-buttons">
+            <button 
+              className="btn btn-success"
+              type="submit"
+            >save</button>
+            <button 
+              className="btn btn-danger"
+              onClick={(e)=> {
+                e.stopPropagation();
+                this.setState({showAddCardForm:false})
+              }}>cancel</button>
+            </div>
+            </div>
+          )}
+            </form>
+      )
   }
 }
 

@@ -35,34 +35,48 @@ class Card extends Component{
       <li className="card-list-item">
         {!showForm && (
           <div>
-          {this.props.card.title}
-          <button onClick={(e) => {
-            e.stopPropagation();
-            this.setState({showEditCardForm: true})
-          }}>
-            edit
-          </button>
+          <p className="card-heading">{this.props.card.title}</p>
+          <span 
+            className="pull-right click-edit"
+            onClick={(e) => {
+              e.stopPropagation();
+              this.setState({showEditCardForm: true})
+            }}
+          >
+            <span className="glyphicon glyphicon-pencil"></span>
+          </span>
           </div>
         )}
         {showForm && (
           <form onSubmit={this.handleSubmit}>
             <input 
+              className="form-control"
               type="text"
               value={this.state.value}
               onChange={this.handleChange}
             />
+            <div className="control-buttons">
             <button
+              className="btn btn-success"
               type="submit"
             >Update</button>
             <button
-              onClick={this.deleteCard}
-            >Delete</button>
-            <button
+              className="btn btn-danger"
               onClick={(e)=> {
                 e.stopPropagation();
                 this.setState({showEditCardForm:false})
               }}
             >Cancel</button>
+            <span
+              className="pull-right click-delete"
+              onClick={this.deleteCard}
+            >
+            <span
+              className="glyphicon glyphicon-trash"
+            ></span>
+            </span>
+
+            </div>
           </form>
         )}
       </li>

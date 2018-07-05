@@ -1,6 +1,6 @@
-import { ADD_LIST, ADD_CARD, DELETE_CARD, UPDATE_CARD } from '../actions/index'
+import { board, ADD_LIST, ADD_CARD, DELETE_CARD, UPDATE_CARD } from '../actions/index'
 
-export default function boardReducer(state = {}, action){
+export default function boardReducer(state = board, action){
   switch(action.type){
     case ADD_LIST:
       const id = Object.keys(state).length + 1;
